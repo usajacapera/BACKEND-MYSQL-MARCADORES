@@ -109,11 +109,11 @@ routes.get('/:table/:lim',(req,res)=>{
     });
 });*/
 
-routes.post('/:table/fecha',(req,res)=>{
+routes.post('/eventos/fecha',(req,res)=>{
   req.getConnection((err,conn)=>{
     if(err) return res.send(err)
 
-    var ssql='INSERT INTO ' + req.params.table + ' SET ? '
+    var ssql='INSERT INTO ' + 'eventos' + ' SET ? '
 
     conn.query(ssql, [req.body], (err,rows)=>{
       if(err) return res.send(err)
@@ -147,11 +147,11 @@ routes.post('/:table',(req,res)=>{
     });
 });*/
 
-routes.delete('/:table/fecha/:field/:id',(req,res)=>{
+routes.delete('/eventos/fecha/:field/:id',(req,res)=>{
   req.getConnection((err,conn)=>{
     if(err) return res.send(err)
 
-    var ssql='DELETE FROM ' + req.params.table + ' WHERE ' + req.params.field +' = ?'
+    var ssql='DELETE FROM ' + 'eventos' + ' WHERE ' + req.params.field +' = ?'
 
     conn.query(ssql, [req.params.id], (err,rows)=>{
       if(err) return res.send(err)
@@ -197,11 +197,11 @@ routes.put('/:table/:field/:id',(req,res)=>{
   })
 })
 
-routes.put('/:table/fecha/:field/:id',(req,res)=>{
+routes.put('/eventos/fecha/:field/:id',(req,res)=>{
   req.getConnection((err,conn)=>{
     if(err) return res.send(err)
 
-    var ssql='UPDATE ' + req.params.table + ' set ? WHERE ' + req.params.field +' = ?'
+    var ssql='UPDATE ' + 'eventos' + ' set ? WHERE ' + req.params.field +' = ?'
 
     conn.query(ssql, [req.body, req.params.id], (err,rows)=>{
       if(err) return res.send(err)
