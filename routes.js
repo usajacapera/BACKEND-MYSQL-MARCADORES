@@ -37,7 +37,7 @@ routes.get('/eventos/fecha', (req, res) => {
     ssql+=',eve_marca1'
     ssql+=',eve_marca2'
     ssql+=',dep_id'
-    ssql+=',eve_descrip from deportes.eventos'
+    ssql+=',eve_descrip from eventos'
 
     conn.query(ssql, (err, rows) => {
       if(err) return res.send(err)
