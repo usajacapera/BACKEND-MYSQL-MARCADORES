@@ -5,25 +5,19 @@ const myconn = require('express-myconnection')
 const routes = require('./routes')
 const cors = require('cors')
 
-const conexion = process.env.DB_HOST
-const port_DB = process.env.PORT_DB
-const user_DB = process.env.DB_USER
-const password_DB = process.env.DB_PASSWORD
-const name_DB = process.env.DB_NAME
-const port_server = process.env.PORT_SERVER
-
 
 const app = express()
 app.use(cors())
+const PORT = process.env.PORT || 9000
 
-app.set('port', port_server)
+app.set('port', PORT)
 
 const dbOptions = {
-    host: conexion,
-    port: port_DB,
-    user: user_DB,
-    password: password_DB,
-    database: name_DB
+    host: process.env.DB_HOST,
+    port: process.env.DB_PORT,
+    user: process.env.DB_USER,
+    password: process.env.DB_PASSWORD,
+    database: process.env.DB_NAME
 }
 
 // -------------middelwares-------------------------
@@ -40,6 +34,6 @@ app.get('/', (req, res) => {
 
 
 
-app.listen(port_server || 9000, () => {
-    console.log(`Server runing on port ${app.get('port')}`)
+app.listen(PORT, () => {
+    console.log(`Server runing on port ${PORT}`)
 })
