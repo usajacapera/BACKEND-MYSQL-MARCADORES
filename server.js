@@ -5,12 +5,12 @@ const myconn = require('express-myconnection')
 const routes = require('./routes')
 const cors = require('cors')
 
-const conexion = process.env.DB_HOST || process.env.MYSQLDATABASE
-const port_DB = process.env.PORT_DB || process.env.MYSQLPORT
-const user_DB = process.env.DB_USER || process.env.MYSQLUSER
-const password_DB = process.env.DB_PASSWORD || process.env.MYSQLPASSWORD
-const name_DB = process.env.DB_NAME || process.env.MYSQLDATABASE
-const port_server = process.env.PORT_SERVER || process.env.MYSQLPORT
+const conexion = process.env.DB_HOST
+const port_DB = process.env.PORT_DB
+const user_DB = process.env.DB_USER
+const password_DB = process.env.DB_PASSWORD
+const name_DB = process.env.DB_NAME
+const port_server = process.env.PORT_SERVER
 
 
 const app = express()
