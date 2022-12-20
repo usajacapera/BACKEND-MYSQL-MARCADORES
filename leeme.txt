@@ -1,0 +1,17 @@
+-----------------
+COMANDOS TERMINAL
+-----------------
+npm init
+npm i express
+npm i mysql
+npm i mysql2
+npm i express-myconnection
+npm install nodemon --save-dev
+npm i cors
+npm i dotenv
+
+---------------------
+VARIABLES DE ENTORNO
+---------------------
+node            -> pasamos como comando en la terminal de la aplicación
+process.env     -> para salir oprimimos las teclas "CTRL + C"
